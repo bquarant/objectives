@@ -1,12 +1,10 @@
-<h1>Listing exams</h1>
+<center><h3>Exams</h3></center>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Content</th>
-      <th>Examday</th>
-      <th>Objective</th>
-      <th>Stem</th>
+      <th>Date of Exam</th>
       <th></th>
       <th></th>
       <th></th>
@@ -18,11 +16,9 @@
       <tr>
         <td><%= exam.content %></td>
         <td><%= exam.examday %></td>
-        <td><%= exam.objective_id %></td>
-        <td><%= exam.stem_id %></td>
         <td><%= link_to 'Show', exam %></td>
         <td><%= link_to 'Edit', edit_exam_path(exam) %></td>
-        <td><%= link_to 'Destroy', exam, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', exam, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Exam', new_exam_path %>
+<center><%= link_to 'New Exam', new_exam_path, :class => "btn btn-primary" %></center>

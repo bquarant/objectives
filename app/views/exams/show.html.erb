@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<table class="table">
+	<th><td></th>
+	<tr>
+</table>
 <p>
   <strong>Content:</strong>
   <%= @exam.content %>
@@ -10,6 +14,7 @@
   <%= @exam.examday %>
 </p>
 
+<!-- 
 <p>
   <strong>Objective:</strong>
   <%= @exam.objective_id %>
@@ -19,6 +24,7 @@
   <strong>Stem:</strong>
   <%= @exam.stem_id %>
 </p>
+-->
 
 <%= link_to 'Edit', edit_exam_path(@exam) %> |
 <%= link_to 'Back', exams_path %>

@@ -15,6 +15,7 @@ class ObjectivesController < ApplicationController
   # GET /objectives/new
   def new
     @objective = Objective.new
+    @exams = Exam.all
   end
 
   # GET /objectives/1/edit
