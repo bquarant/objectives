@@ -1,0 +1,27 @@
+<h1>Listing question_stems</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Stem</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @question_stems.each do |question_stem| %>
+      <tr>
+        <td><%= question_stem.stem %></td>
+        <td><%= link_to 'Show', question_stem %></td>
+        <td><%= link_to 'Edit', edit_question_stem_path(question_stem) %></td>
+        <td><%= link_to 'Destroy', question_stem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Question stem', new_question_stem_path %>

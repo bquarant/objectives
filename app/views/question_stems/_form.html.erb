@@ -1,0 +1,21 @@
+<%= form_for(@question_stem) do |f| %>
+  <% if @question_stem.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@question_stem.errors.count, "error") %> prohibited this question_stem from being saved:</h2>
+
+      <ul>
+      <% @question_stem.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :stem %><br>
+    <%= f.text_field :stem %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

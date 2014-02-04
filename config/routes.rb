@@ -1,9 +1,12 @@
 Objectives::Application.routes.draw do
+  resources :question_stems
+
+  get "about/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'about#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
