@@ -1,4 +1,6 @@
 Objectives::Application.routes.draw do
+  resources :responses
+
   resources :exams
 
   resources :objectives
