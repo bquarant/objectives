@@ -12,8 +12,7 @@
   <% end %>
 
 <table class="table">
-	<tr><td><strong>Exam</strong></td><td><%= f.number_field :exam_id %></td></tr>
-	This should be a dropdown box of Exams...
+	<tr><td><strong>Exam</strong></td><td><%= collection_select("exam", "exam_id", @exams, :id, :content, {:prompt => true})%></td></tr>
 	<tr><td><strong>Objective</strong></td><td><%= f.text_field :objective %></td></tr>
 	<tr></tr>
 </table>

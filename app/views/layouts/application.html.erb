@@ -31,8 +31,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
       <ul class="nav navbar-nav navbar-right">
-	    <li><a href="/exams/new">New Exam</a></li>
-	    <li><a href="/objectives/new">New Objective</a></li>
+	    <li><a href="/exams">Exams</a></li>
+	    <li><a href="/objectives">Objectives</a></li>
         <li><a href="/stems/new">New Question</a></li>
 		<% if user_signed_in? %>
 		<li><%= link_to('Sign out', destroy_user_session_path, :method => :delete) %></li>

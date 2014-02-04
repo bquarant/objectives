@@ -1,12 +1,10 @@
-<h1>Listing objectives</h1>
+<center><h3>Objectives</h3></center>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Objective</th>
-      <th>Stem</th>
       <th>Exam</th>
-      <th>Strength</th>
       <th></th>
       <th></th>
       <th></th>
@@ -17,9 +15,7 @@
     <% @objectives.each do |objective| %>
       <tr>
         <td><%= objective.objective %></td>
-        <td><%= objective.stem_id %></td>
         <td><%= objective.exam_id %></td>
-        <td><%= objective.strength_id %></td>
         <td><%= link_to 'Show', objective %></td>
         <td><%= link_to 'Edit', edit_objective_path(objective) %></td>
         <td><%= link_to 'Destroy', objective, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -30,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Objective', new_objective_path %>
+<center><%= link_to 'New Objective', new_objective_path, :class => "btn btn-primary" %></center>

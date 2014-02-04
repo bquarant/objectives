@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140204201030) do
+ActiveRecord::Schema.define(version: 20140204210448) do
 
   create_table "exams", force: true do |t|
     t.string   "content"
@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 20140204201030) do
     t.string   "objective"
     t.integer  "stem_id"
     t.integer  "exam_id"
-    t.integer  "strength_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -44,6 +43,7 @@ ActiveRecord::Schema.define(version: 20140204201030) do
     t.integer  "stem_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "strength"
   end
 
   create_table "stems", force: true do |t|
