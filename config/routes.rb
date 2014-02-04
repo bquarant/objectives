@@ -1,4 +1,8 @@
 Objectives::Application.routes.draw do
+  resources :exams
+
+  resources :objectives
+
   resources :question_stems
 
   get "about/index"

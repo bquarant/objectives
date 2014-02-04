@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  objective: MyString
+  stem_id: 1
+  exam_id: 1
+  strength_id: 1
+
+two:
+  objective: MyString
+  stem_id: 1
+  exam_id: 1
+  strength_id: 1

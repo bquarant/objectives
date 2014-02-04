@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  content: MyString
+  examday: MyString
+  objective_id: 1
+  stem_id: 1
+
+two:
+  content: MyString
+  examday: MyString
+  objective_id: 1
+  stem_id: 1
