@@ -11,14 +11,15 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_field :content %>
-  </div>
-  <div class="field">
-    <%= f.label :examday %><br>
-    <%= f.text_field :examday %>
-  </div>
+<table>
+	<tr><td>Title: &nbsp;</td><td><div class="field"><%= f.text_field :content %></div></td></tr>
+	<tr><td>Date</td><td>  <div class="field"><%= f.text_field :examday %></div></td></tr>
+</table>
+
+<br>
+
+<br>
+<!--
   <div class="field">
     <%= f.label :objective_id %><br>
     <%= f.number_field :objective_id %>
@@ -30,4 +31,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+-->
 <% end %>
