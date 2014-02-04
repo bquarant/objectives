@@ -1,4 +1,4 @@
-<%= form_for(@exam) do |f| %>
+<%= simple_form_for(@exam) do |f| %>
   <% if @exam.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@exam.errors.count, "error") %> prohibited this exam from being saved:</h2>
@@ -11,11 +11,14 @@
     </div>
   <% end %>
 
-<table>
-	<tr><td>Title: &nbsp;</td><td><div class="field"><%= f.text_field :content %></div></td></tr>
-	<tr><td>Date</td><td>  <div class="field"><%= f.text_field :examday %></div></td></tr>
+<table class="table">
+	<tr><td><strong>Title</strong></td><td><div class="field"><%= f.text_field :content %></div></td></tr>
+	<tr><td><strong>Date</strong></td><td><div class="field"><%= f.text_field :examday %></div></td></tr>
 </table>
-
+<br>
+<center>
+<%= f.button :submit, "Create", :class => "btn btn-primary" %>
+</center>
 <br>
 
 <br>
@@ -28,8 +31,6 @@
     <%= f.label :stem_id %><br>
     <%= f.number_field :stem_id %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
 -->
 <% end %>

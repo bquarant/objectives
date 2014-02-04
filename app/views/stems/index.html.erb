@@ -1,0 +1,29 @@
+<h1>Listing stems</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th>Exam</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stems.each do |stem| %>
+      <tr>
+        <td><%= stem.content %></td>
+        <td><%= stem.exam_id %></td>
+        <td><%= link_to 'Show', stem %></td>
+        <td><%= link_to 'Edit', edit_stem_path(stem) %></td>
+        <td><%= link_to 'Destroy', stem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Stem', new_stem_path %>

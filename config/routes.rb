@@ -1,12 +1,12 @@
 Objectives::Application.routes.draw do
+  resources :stems
+
   devise_for :users
   resources :responses
 
   resources :exams
 
   resources :objectives
-
-  resources :question_stems
 
   get "about/index"
   # The priority is based upon order of creation: first created -> highest priority.

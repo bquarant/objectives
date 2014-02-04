@@ -1,28 +1,20 @@
 class ExamsController < ApplicationController
   before_action :set_exam, only: [:show, :edit, :update, :destroy]
 
-  # GET /exams
-  # GET /exams.json
   def index
     @exams = Exam.all
   end
 
-  # GET /exams/1
-  # GET /exams/1.json
   def show
   end
 
-  # GET /exams/new
   def new
     @exam = Exam.new
   end
 
-  # GET /exams/1/edit
   def edit
   end
 
-  # POST /exams
-  # POST /exams.json
   def create
     @exam = Exam.new(exam_params)
 
@@ -37,8 +29,6 @@ class ExamsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /exams/1
-  # PATCH/PUT /exams/1.json
   def update
     respond_to do |format|
       if @exam.update(exam_params)
@@ -51,8 +41,6 @@ class ExamsController < ApplicationController
     end
   end
 
-  # DELETE /exams/1
-  # DELETE /exams/1.json
   def destroy
     @exam.destroy
     respond_to do |format|

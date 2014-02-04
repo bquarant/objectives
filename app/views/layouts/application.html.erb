@@ -31,35 +31,26 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
       <ul class="nav navbar-nav navbar-right">
-	    <li><a href="/responses/new">New Response</a></li>
 	    <li><a href="/exams/new">New Exam</a></li>
-        <li><a href="/question_stems/new">New Question</a></li>
+	    <li><a href="/objectives/new">New Objective</a></li>
+        <li><a href="/stems/new">New Question</a></li>
 		<% if user_signed_in? %>
 		<li><%= link_to('Sign out', destroy_user_session_path, :method => :delete) %></li>
 		<% else %>
 		<li><a href="/users/sign_in">Log In</a></li>
 		<% end %>
-		<!--
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-		-->
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>
+
 <!--Flash messages -->
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 <!-- Render! -->
+<div class="jumbotron">
 <%= yield %>
+</div>
 <!-- Add code for footer-->
 </div>
 </body>

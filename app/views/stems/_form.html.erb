@@ -1,10 +1,10 @@
-<%= simple_form_for(@objective) do |f| %>
-  <% if @objective.errors.any? %>
+<%= simple_form_for(@stem) do |f| %>
+  <% if @stem.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@objective.errors.count, "error") %> prohibited this objective from being saved:</h2>
+      <h2><%= pluralize(@stem.errors.count, "error") %> prohibited this stem from being saved:</h2>
 
       <ul>
-      <% @objective.errors.full_messages.each do |msg| %>
+      <% @stem.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -14,7 +14,7 @@
 <table class="table">
 	<tr><td><strong>Exam</strong></td><td><%= f.number_field :exam_id %></td></tr>
 	This should be a dropdown box of Exams...
-	<tr><td><strong>Objective</strong></td><td><%= f.text_field :objective %></td></tr>
+	<tr><td><strong>Question stem</strong></td><td><%= f.text_field :content %></td></tr>
 	<tr></tr>
 </table>
 <br>
@@ -22,4 +22,5 @@
 <%= f.button :submit, "Create", :class => "btn btn-primary" %>
 </center>
 <br>
+
 <% end %>
