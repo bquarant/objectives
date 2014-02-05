@@ -12,14 +12,13 @@
   <% end %>
 
 <table class="table">
-	<tr><td><strong>Exam</strong></td><td><%= f.number_field :exam_id %></td></tr>
-	This should be a dropdown box of Exams...
+	<tr><td><strong>Exam</strong></td><td><%= f.input :exam_id, as: :select, collection: @exams, :label_method => :content, :value_method => :id, label:false %></td></tr>
 	<tr><td><strong>Question stem</strong></td><td><%= f.text_field :content %></td></tr>
 	<tr></tr>
 </table>
 <br>
 <center>
-<%= f.button :submit, "Create", :class => "btn btn-primary" %>
+<%= f.button :submit, "Create Question!", :class => "btn btn-primary" %>
 </center>
 <br>
 

@@ -15,6 +15,7 @@ class StemsController < ApplicationController
   # GET /stems/new
   def new
     @stem = Stem.new
+    @exams = Exam.all
   end
 
   # GET /stems/1/edit

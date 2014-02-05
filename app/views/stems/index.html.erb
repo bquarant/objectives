@@ -1,6 +1,6 @@
-<h1>Listing stems</h1>
+<center><h3>Questions</h3></center>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Content</th>
@@ -15,7 +15,8 @@
     <% @stems.each do |stem| %>
       <tr>
         <td><%= stem.content %></td>
-        <td><%= stem.exam_id %></td>
+		<% exam = Exam.find(stem.exam_id) %>
+	    <td><%= exam.content %></td>
         <td><%= link_to 'Show', stem %></td>
         <td><%= link_to 'Edit', edit_stem_path(stem) %></td>
         <td><%= link_to 'Destroy', stem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -26,4 +27,4 @@
 
 <br>
 
-<%= link_to 'New Stem', new_stem_path %>
+<center><%= link_to 'New Question', new_stem_path, :class => "btn btn-primary" %></center>
