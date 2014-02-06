@@ -1,14 +1,17 @@
-<h1>Listing responses</h1>
+<center><h3>Responses</h3></center>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>User</th>
-      <th>Objective</th>
       <th>Stem</th>
+      <th>Objective</th>
+      <th>Strength</th>
+<!-- TODO: Set conditional display based on user model attributes.... 
       <th></th>
       <th></th>
       <th></th>
+-->
     </tr>
   </thead>
 
@@ -16,11 +19,14 @@
     <% @responses.each do |response| %>
       <tr>
         <td><%= response.user_id %></td>
-        <td><%= response.objective_id %></td>
         <td><%= response.stem_id %></td>
+        <td><%= response.objective_id %></td>
+        <td><%= response.strength %></td>
+<!-- TODO: Set conditional display based on user model attributes.... 
         <td><%= link_to 'Show', response %></td>
         <td><%= link_to 'Edit', edit_response_path(response) %></td>
         <td><%= link_to 'Destroy', response, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+-->
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Response', new_response_path %>
+<center><%= link_to 'New Response', new_response_path, :class => "btn btn-primary" %></center>

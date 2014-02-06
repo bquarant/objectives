@@ -13,9 +13,6 @@
 
 <table class="table">
 	<tr><td><strong>Exam</strong></td><td><%= f.input :exam_id, as: :select, collection: @exams, :label_method => :content, :value_method => :id, label:false %></td></tr>
-	
-	<!-- Solution 1: doesn't seem to be saving things correctly...
-	<%= collection_select("", :exam_id, @exams, :id, :content, {:prompt => true})%>-->
 	<tr><td><strong>Objective</strong></td><td><%= f.text_field :objective %></td></tr>
 	<tr></tr>
 </table>

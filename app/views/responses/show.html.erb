@@ -1,19 +1,18 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>User:</strong>
-  <%= @response.user_id %>
-</p>
-
-<p>
-  <strong>Objective:</strong>
-  <%= @response.objective_id %>
-</p>
+<center><h3>Thanks for submitting a response!</h3></center>
 
 <p>
   <strong>Stem:</strong>
-  <%= @response.stem_id %>
+  <%= @stem.content %>
 </p>
 
-<%= link_to 'Edit', edit_response_path(@response) %> |
-<%= link_to 'Back', responses_path %>
+<p>
+  <strong>Objective:</strong> <%= %>
+  <%= @objective.objective %>
+</p>
+
+<p>
+  <strong>Strength:</strong> <%= %>
+  <%= @response.strength %>
+</p>
+
+<center><%= link_to 'Submit another!', new_response_path, :class => "btn btn-primary" %></center>

@@ -1,28 +1,24 @@
 class ResponsesController < ApplicationController
   before_action :set_response, only: [:show, :edit, :update, :destroy]
 
-  # GET /responses
-  # GET /responses.json
   def index
     @responses = Response.all
   end
 
-  # GET /responses/1
-  # GET /responses/1.json
   def show
+    @stem = Stem.find(:first, :conditions => { :id => @response.stem_id })
+    @objective = Objective.find(:first, :conditions => { :id => @response.objective_id })
   end
 
-  # GET /responses/new
   def new
     @response = Response.new
+    @stem = Stem.random
+    @objectives = Objective.where(:exam_id => @stem.exam_id)
   end
 
-  # GET /responses/1/edit
   def edit
   end
 
-  # POST /responses
-  # POST /responses.json
   def create
     @response = Response.new(response_params)
     @response.user_id = current_user
@@ -38,8 +34,6 @@ class ResponsesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /responses/1
-  # PATCH/PUT /responses/1.json
   def update
     respond_to do |format|
       if @response.update(response_params)
@@ -52,8 +46,6 @@ class ResponsesController < ApplicationController
     end
   end
 
-  # DELETE /responses/1
-  # DELETE /responses/1.json
   def destroy
     @response.destroy
     respond_to do |format|
@@ -70,6 +62,6 @@ class ResponsesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def response_params
-      params.require(:response).permit(:user_id, :objective_id, :stem_id)
+      params.require(:response).permit(:user_id, :objective_id, :stem_id, :strength)
     end
 end
