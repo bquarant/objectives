@@ -7,11 +7,10 @@
       <th>Stem</th>
       <th>Objective</th>
       <th>Strength</th>
-<!-- TODO: Set conditional display based on user model attributes.... 
       <th></th>
       <th></th>
       <th></th>
--->
+
     </tr>
   </thead>
 
@@ -22,11 +21,9 @@
         <td><%= response.stem_id %></td>
         <td><%= response.objective_id %></td>
         <td><%= response.strength %></td>
-<!-- TODO: Set conditional display based on user model attributes.... 
         <td><%= link_to 'Show', response %></td>
         <td><%= link_to 'Edit', edit_response_path(response) %></td>
         <td><%= link_to 'Destroy', response, method: :delete, data: { confirm: 'Are you sure?' } %></td>
--->
       </tr>
     <% end %>
   </tbody>

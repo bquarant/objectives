@@ -18,6 +18,12 @@
 	<tr><td><strong>How important?</strong></td><td><%= f.input :strength, collection:1..5, label:false %></td></tr>
 	<%= f.input :stem_id, :as => :hidden, :input_html => {:value => @stem.id } %>
 	
+	<% if user_signed_in? %>
+	<%= f.input :user_id, :as => :hidden, :input_html => {:value => current_user.id } %>
+	<% else %>
+	<%= f.input :user_id, :as => :hidden, :input_html => {:value => 0 } %>
+	<% end %>
+	
 </table>
 </center>
 <br>

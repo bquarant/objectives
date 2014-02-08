@@ -11,6 +11,8 @@ gem 'devise'
 gem 'simple_form'
 gem 'random_record'
 gem 'thin'
+gem 'rails-erd'
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

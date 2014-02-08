@@ -12,6 +12,7 @@ class ResponsesController < ApplicationController
 
   def new
     @response = Response.new
+    ### ideally here would be the filtering for the stems....?
     @stem = Stem.random
     @objectives = Objective.where(:exam_id => @stem.exam_id)
   end
@@ -21,7 +22,6 @@ class ResponsesController < ApplicationController
 
   def create
     @response = Response.new(response_params)
-    @response.user_id = current_user
 
     respond_to do |format|
       if @response.save
