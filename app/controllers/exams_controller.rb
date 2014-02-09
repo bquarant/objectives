@@ -6,6 +6,9 @@ class ExamsController < ApplicationController
   end
 
   def show
+    @stems = Stem.where(:exam_id => @exam.id)
+    @objectives = Objective.where(:exam_id => @exam.id)
+
   end
 
   def new

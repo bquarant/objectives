@@ -1,30 +1,43 @@
-<p id="notice"><%= notice %></p>
-
+<center><h3><%= @exam.content %><br><small><%= @exam.examday %></small></h3></center>
+<br>
 <table class="table">
-	<th><td></th>
-	<tr>
+  <thead>
+    <tr>
+      <th>Question</th>
+	  <center>
+	  <th>Objective - Rater 1</th>
+	  <th>Objective - Rater 2</th>
+	  <th>Agree?</th>
+	  <th>Strength - Rater 1</th>
+	  <th>Strength - Rater 2</th>
+	  </center>
+    </tr>
+  </thead>
+  <tbody>
+    <% @stems.each do |stem| %>
+      <tr>
+        <td><%= stem.content %></td>
+	  	<% responses = Response.where(:stem_id => stem.id).order("created_at").last(2)%>
+		<% objarray = [] %>
+			<% responses.each do |response| %>
+				<td> <%= response.objective_id %></td>
+				<% objarray.push(response.objective_id) %>
+			<% end %>
+			
+			<% if objarray[0] == objarray[1] %>
+			<td><span class="glyphicon glyphicon-ok"></span></td>		
+			<% else %>
+			<td>fail</td>
+			<% end %>
+			
+			<% responses.each do |response| %>
+				<td> <%= response.strength %></td>
+			<% end %>		
+      </tr>
+    <% end %>
+  	</tbody>
 </table>
-<p>
-  <strong>Content:</strong>
-  <%= @exam.content %>
-</p>
 
-<p>
-  <strong>Examday:</strong>
-  <%= @exam.examday %>
-</p>
 
-<!-- 
-<p>
-  <strong>Objective:</strong>
-  <%= @exam.objective_id %>
-</p>
-
-<p>
-  <strong>Stem:</strong>
-  <%= @exam.stem_id %>
-</p>
--->
-
-<%= link_to 'Edit', edit_exam_path(@exam) %> |
+<br><br>
 <%= link_to 'Back', exams_path %>
