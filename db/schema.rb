@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140208230906) do
+ActiveRecord::Schema.define(version: 20140209023654) do
+
+  create_table "analyses", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "analyzes", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "exams", force: true do |t|
     t.string   "content"
@@ -28,6 +38,13 @@ ActiveRecord::Schema.define(version: 20140208230906) do
     t.integer  "exam_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "question_stems", force: true do |t|
+    t.string   "stem"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "exam_id"
   end
 
   create_table "responses", force: true do |t|
@@ -59,6 +76,7 @@ ActiveRecord::Schema.define(version: 20140208230906) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "is_admin"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

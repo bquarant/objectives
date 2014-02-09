@@ -5,9 +5,15 @@
     <tr>
       <th>Objective</th>
       <th>Exam</th>
+	<% if user_signed_in? %>
+	<% if current_user.is_admin == 1 %>
       <th></th>
       <th></th>
       <th></th>
+	<% else%>
+	<% end %>
+	<% else %>
+	<% end %>
     </tr>
   </thead>
 
@@ -17,9 +23,15 @@
         <td><%= objective.objective %></td>
 		<% exam = Exam.find(objective.exam_id) %>
 	    <td><%= exam.content %></td>
+	<% if user_signed_in? %>
+	<% if current_user.is_admin == 1 %>
         <td><%= link_to 'Show', objective %></td>
         <td><%= link_to 'Edit', edit_objective_path(objective) %></td>
         <td><%= link_to 'Destroy', objective, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<% else %>
+	<% end %>
+	<% else %>
+	<% end %>
       </tr>
     <% end %>
   </tbody>

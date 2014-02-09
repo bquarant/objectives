@@ -14,8 +14,8 @@
 
 <center>
 <table class="table">
-	<tr><td><strong>What lecture objective?</strong></td><td><%= f.input :objective_id, as: :select, collection: @objectives, :label_method => :objective, :value_method => :id, label:false %></td></tr>
-	<tr><td><strong>How important?</strong></td><td><%= f.input :strength, collection:1..5, label:false %></td></tr>
+	<tr><td><strong>What lecture objective does this question address?</strong></td><td><%= f.input :objective_id, as: :select, collection: @objectives, :label_method => :objective, :value_method => :id, label:false %></td></tr>
+	<tr><td><strong>How strong is the association? <br>(1 = very weak, 5 = very strong)</strong></td><td><%= f.input :strength, collection:1..5, label:false %></td></tr>
 	<%= f.input :stem_id, :as => :hidden, :input_html => {:value => @stem.id } %>
 	
 	<% if user_signed_in? %>

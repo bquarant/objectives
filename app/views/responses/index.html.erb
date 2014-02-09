@@ -7,10 +7,15 @@
       <th>Stem</th>
       <th>Objective</th>
       <th>Strength</th>
+	<% if user_signed_in? %>
+	<% if current_user.is_admin == 1 %>
       <th></th>
       <th></th>
       <th></th>
-
+	<% else %>
+	<% end %>
+	<% else %>
+	<% end %>
     </tr>
   </thead>
 
@@ -21,9 +26,15 @@
         <td><%= response.stem_id %></td>
         <td><%= response.objective_id %></td>
         <td><%= response.strength %></td>
+	<% if user_signed_in? %>
+	<% if current_user.is_admin == 1 %>
         <td><%= link_to 'Show', response %></td>
         <td><%= link_to 'Edit', edit_response_path(response) %></td>
         <td><%= link_to 'Destroy', response, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<% else %>
+	<% end %>
+	<% else %>
+	<% end %>
       </tr>
     <% end %>
   </tbody>

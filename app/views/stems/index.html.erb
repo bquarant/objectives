@@ -5,9 +5,15 @@
     <tr>
       <th>Content</th>
       <th>Exam</th>
+	<% if user_signed_in? %>
+	<% if current_user.is_admin == 1 %>
       <th></th>
       <th></th>
       <th></th>
+	<% else %>
+	<% end %>
+	<% else %>
+	<% end %>
     </tr>
   </thead>
 
@@ -17,9 +23,15 @@
         <td><%= stem.content %></td>
 		<% exam = Exam.find(stem.exam_id) %>
 	    <td><%= exam.content %></td>
+	<% if user_signed_in? %>
+	<% if current_user.is_admin == 1 %>
         <td><%= link_to 'Show', stem %></td>
         <td><%= link_to 'Edit', edit_stem_path(stem) %></td>
         <td><%= link_to 'Destroy', stem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<% else %>
+	<% end %>
+	<% else %>
+	<% end %>
       </tr>
     <% end %>
   </tbody>

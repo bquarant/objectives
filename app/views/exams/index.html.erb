@@ -6,8 +6,15 @@
       <th>Content</th>
       <th>Date</th>
       <th></th>
+	<% if user_signed_in? %>
+	<% if current_user.is_admin == 1 %>
       <th></th>
-    </tr>
+	  <th></th>
+	<% else %>
+	<% end %>
+	<% else %>
+	<% end %>
+  </tr>
   </thead>
 
   <tbody>
@@ -15,12 +22,16 @@
       <tr>
         <td><%= exam.content %></td>
         <td><%= exam.examday %></td>
-        <td><%= link_to 'Analyze!', exam %></td>
+        <td><%= link_to 'Analyze', exam, :class => "btn btn-danger" %></td>
+		<% if user_signed_in? %>
+		<% if current_user.is_admin == 1 %>
         <td><%= link_to 'Edit', edit_exam_path(exam) %></td>
-		<!-- Let's be a little more careful, now 
         <td><%= link_to 'Delete', exam, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-		-->
-      </tr>
+		<% else %>
+		<% end %>
+		<% else %>
+		<% end %>  
+    </tr>
     <% end %>
   </tbody>
 </table>
