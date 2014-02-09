@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 gem 'rails', '4.0.0.rc1'
-gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.0.rc1'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -12,24 +11,20 @@ gem 'simple_form'
 gem 'random_record'
 gem 'thin'
 gem 'rails-erd'
+gem 'rails_12factor', group: :production
 
-
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
+group :development do
+  gem 'rspec-rails', '2.11.0'
+  # TODO: We should be using postgres in development as well, I think I need to install it?
+  gem 'sqlite3'
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+group :test do
+  gem 'rspec-rails', '2.11.0'
+  gem 'webrat', '0.7.1'
+end
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
-
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+group :production do
+  # gems specifically for Heroku go here
+  gem "pg"
+end
